@@ -30,6 +30,18 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(square(-3), 9)
         self.assertEqual(square(0), 0)
 
+    
+    def test_invalid_inputs(self):
+        for value in ["abc", None, True]:
+            with self.subTest(value=value):
+                with self.assertRaises(TypeError):
+                    add(value, 2)
+
+    def test_invalid_division_inputs(self):
+        with self.assertRaises(TypeError):
+            divide(10, "2")
+
+
 
 if __name__ == "__main__":
     unittest.main()
