@@ -1,0 +1,322 @@
+PS S:\ssl_lab7_q2_mc25bt023> mkdir calculator-library
+>> cd calculator-library
+>> git init
+
+
+    Directory: S:\ssl_lab7_q2_mc25bt023
+
+
+Mode                 LastWriteTime         Length Name                                                               
+----                 -------------         ------ ----                                                               
+d-----        15-10-2026     10:25                calculator-library                                                 
+Initialized empty Git repository in S:/ssl_lab7_q2_mc25bt023/calculator-library/.git/
+
+
+PS S:\ssl_lab7_q2_mc25bt023\calculator-library> python -m unittest -v
+test_calculator (unittest.loader._FailedTest.test_calculator) ... ERROR
+
+======================================================================
+ERROR: test_calculator (unittest.loader._FailedTest.test_calculator)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_calculator
+Traceback (most recent call last):
+  File "C:\Users\shrav\AppData\Local\Programs\Python\Python312\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shrav\AppData\Local\Programs\Python\Python312\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "S:\ssl_lab7_q2_mc25bt023\calculator-library\test_calculator.py", line 3, in <module>
+    from calculator import add, subtract, multiply, divide, square
+ModuleNotFoundError: No module named 'calculator'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (errors=1)
+PS S:\ssl_lab7_q2_mc25bt023\calculator-library> python -m unittest -v   
+test_calculator (unittest.loader._FailedTest.test_calculator) ... ERROR
+           
+======================================================================
+ERROR: test_calculator (unittest.loader._FailedTest.test_calculator)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_calculator
+Traceback (most recent call last):
+  File "C:\Users\shrav\AppData\Local\Programs\Python\Python312\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shrav\AppData\Local\Programs\Python\Python312\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "S:\ssl_lab7_q2_mc25bt023\calculator-library\test_calculator.py", line 3, in <module>
+    from calculator import add, subtract, multiply, divide, square
+ModuleNotFoundError: No module named 'calculator'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)
+PS S:\ssl_lab7_q2_mc25bt023\calculator-library> python -m unittest -v
+test_calculator (unittest.loader._FailedTest.test_calculator) ... ERROR
+
+======================================================================
+ERROR: test_calculator (unittest.loader._FailedTest.test_calculator)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_calculator
+Traceback (most recent call last):
+  File "C:\Users\shrav\AppData\Local\Programs\Python\Python312\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shrav\AppData\Local\Programs\Python\Python312\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "S:\ssl_lab7_q2_mc25bt023\calculator-library\test_calculator.py", line 3, in <module>
+    from calculator import add, subtract, multiply, divide, square
+ModuleNotFoundError: No module named 'calculator'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)
+PS S:\ssl_lab7_q2_mc25bt023\calculator-library> python -m unittest -v
+test_add (test_calculator.TestCalculator.test_add) ... ok
+test_divide (test_calculator.TestCalculator.test_divide) ... ok
+test_divide_by_zero (test_calculator.TestCalculator.test_divide_by_zero) ... ok
+test_multiply (test_calculator.TestCalculator.test_multiply) ... ok
+test_square (test_calculator.TestCalculator.test_square) ... ok
+test_subtract (test_calculator.TestCalculator.test_subtract) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+OK
+PS S:\ssl_lab7_q2_mc25bt023\calculator-library> git add .
+>> git commit -m "Initial working calculator implementation"
+[master (root-commit) 95e5036] Initial working calculator implementation
+ 4 files changed, 82 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 README.md
+ create mode 100644 calculator.py
+ create mode 100644 test_calculator.py
+PS S:\ssl_lab7_q2_mc25bt023\calculator-library> python -m unittest -v
+test_add (test_calculator.TestCalculator.test_add) ... ok
+test_divide (test_calculator.TestCalculator.test_divide) ... ok
+test_divide_by_zero (test_calculator.TestCalculator.test_divide_by_zero) ... ok
+test_invalid_division_inputs (test_calculator.TestCalculator.test_invalid_division_inputs) ... ok
+test_invalid_inputs (test_calculator.TestCalculator.test_invalid_inputs) ... ok
+test_multiply (test_calculator.TestCalculator.test_multiply) ... ok
+test_square (test_calculator.TestCalculator.test_square) ... ok
+test_subtract (test_calculator.TestCalculator.test_subtract) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.002s
+
+OK
+PS S:\ssl_lab7_q2_mc25bt023\calculator-library> git add calculator.py test_calculator.py
+>> git commit -m "Add input validation and error handling"
+[master 9dcd59c] Add input validation and error handling
+ 2 files changed, 23 insertions(+)
+PS S:\ssl_lab7_q2_mc25bt023\calculator-library> git log --oneline
+>> git status
+9dcd59c (HEAD -> master) Add input validation and error handling
+95e5036 Initial working calculator implementation
+On branch master
+nothing to commit, working tree clean
+PS S:\ssl_lab7_q2_mc25bt023\calculator-library> git add calculator.py
+>> git commit -m "Introduce bug in square function"
+[master c1a0f94] Introduce bug in square function
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+PS S:\ssl_lab7_q2_mc25bt023\calculator-library> git log --oneline
+c1a0f94 (HEAD -> master) Introduce bug in square function
+9dcd59c Add input validation and error handling
+95e5036 Initial working calculator implementation
+PS S:\ssl_lab7_q2_mc25bt023\calculator-library> git show HEAD
+commit c1a0f945260c9d03e6baedc61ce18e41e191a347 (HEAD -> master)
+Author: shravan6926 <shravanpawar050407@gmail.com>
+Date:   Thu Oct 15 10:34:16 2026 +0530
+
+    Introduce bug in square function
+
+diff --git a/calculator.py b/calculator.py
+index 0819a09..67f1f14 100644
+--- a/calculator.py
++++ b/calculator.py
+:
+commit c1a0f945260c9d03e6baedc61ce18e41e191a347 (HEAD -> master)
+Author: shravan6926 <shravanpawar050407@gmail.com>
+Date:   Thu Oct 15 10:34:16 2026 +0530
+
+    Introduce bug in square function
+
+diff --git a/calculator.py b/calculator.py
+index 0819a09..67f1f14 100644
+--- a/calculator.py
++++ b/calculator.py
+:
+--------
+PS S:\ssl_lab7_q2_mc25bt023> git log -p -1 -- calculator.py
+fatal: not a git repository (or any of the parent directories): .git
+PS S:\ssl_lab7_q2_mc25bt023> cd .\calculator-library\
+PS S:\ssl_lab7_q2_mc25bt023\calculator-library> git log -p -1 -- calculator.py
+commit c1a0f945260c9d03e6baedc61ce18e41e191a347 (HEAD -> master)
+Author: shravan6926 <shravanpawar050407@gmail.com>
+Date:   Thu Oct 15 10:34:16 2026 +0530
+
+    Introduce bug in square function
+
+diff --git a/calculator.py b/calculator.py
+index 0819a09..67f1f14 100644
+--- a/calculator.py
++++ b/calculator.py
+:
+commit c1a0f945260c9d03e6baedc61ce18e41e191a347 (HEAD -> master)
+Author: shravan6926 <shravanpawar050407@gmail.com>
+Date:   Thu Oct 15 10:34:16 2026 +0530
+
+    Introduce bug in square function
+
+diff --git a/calculator.py b/calculator.py
+index 0819a09..67f1f14 100644
+:
+----
+PS S:\ssl_lab7_q2_mc25bt023> cd .\calculator-library\
+PS S:\ssl_lab7_q2_mc25bt023\calculator-library> python -m unittest -v
+test_add (test_calculator.TestCalculator.test_add) ... ok
+test_divide (test_calculator.TestCalculator.test_divide) ... ok
+test_divide_by_zero (test_calculator.TestCalculator.test_divide_by_zero) ... ok
+test_invalid_division_inputs (test_calculator.TestCalculator.test_invalid_division_inputs) ... ok
+test_invalid_inputs (test_calculator.TestCalculator.test_invalid_inputs) ... ok
+test_multiply (test_calculator.TestCalculator.test_multiply) ... ok
+test_square (test_calculator.TestCalculator.test_square) ... ok
+test_subtract (test_calculator.TestCalculator.test_subtract) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.002s
+
+OK
+PS S:\ssl_lab7_q2_mc25bt023\calculator-library> git add calculator.py
+>> git commit -m "Fix square function"
+[master 0d28b6a] Fix square function
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+PS S:\ssl_lab7_q2_mc25bt023\calculator-library> git log --oneline
+0d28b6a (HEAD -> master) Fix square function
+c1a0f94 Introduce bug in square function
+9dcd59c Add input validation and error handling
+95e5036 Initial working calculator implementation
+PS S:\ssl_lab7_q2_mc25bt023\calculator-library> git tag -a v1.0 -m "Stable calculator version 1.0"
+PS S:\ssl_lab7_q2_mc25bt023\calculator-library> git tag
+>> git show v1.0
+v1.0
+tag v1.0
+Tagger: shravan6926 <shravanpawar050407@gmail.com>
+Date:   Thu Oct 15 10:37:16 2026 +0530
+
+Stable calculator version 1.0
+
+commit 0d28b6a5a98d23264003cd987cf0a542fb4e20f3 (HEAD -> master, tag: v1.0)
+Author: shravan6926 <shravanpawar050407@gmail.com>
+Date:   Thu Oct 15 10:36:52 2026 +0530
+
+:---
+PS S:\ssl_lab7_q2_mc25bt023> cd .\calculator-library\
+PS S:\ssl_lab7_q2_mc25bt023\calculator-library> git log --oneline --decorate
+0d28b6a (HEAD -> master, tag: v1.0) Fix square function
+c1a0f94 Introduce bug in square function
+9dcd59c Add input validation and error handling
+95e5036 Initial working calculator implementation
+PS S:\ssl_lab7_q2_mc25bt023\calculator-library> python -m unittest -v
+>> python calculator.py
+>> git status
+test_add (test_calculator.TestCalculator.test_add) ... ok
+test_divide (test_calculator.TestCalculator.test_divide) ... ok
+test_divide_by_zero (test_calculator.TestCalculator.test_divide_by_zero) ... ok
+test_invalid_division_inputs (test_calculator.TestCalculator.test_invalid_division_inputs) ... ok
+test_invalid_inputs (test_calculator.TestCalculator.test_invalid_inputs) ... ok
+test_multiply (test_calculator.TestCalculator.test_multiply) ... ok
+test_square (test_calculator.TestCalculator.test_square) ... ok
+test_subtract (test_calculator.TestCalculator.test_subtract) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.001s
+
+OK
+8
+5.0
+16
+On branch master
+nothing to commit, working tree clean
+PS S:\ssl_lab7_q2_mc25bt023\calculator-library> git log --oneline --graph --decorate
+* 0d28b6a (HEAD -> master, tag: v1.0) Fix square function
+* c1a0f94 Introduce bug in square function
+* 9dcd59c Add input validation and error handling
+* 95e5036 Initial working calculator implementation
+PS S:\ssl_lab7_q2_mc25bt023\calculator-library> git remote -v
+PS S:\ssl_lab7_q2_mc25bt023\calculator-library> gh repo create ssl_lab7_q2_mc25bt023 --public --source=. --remote=origin
+✓ Created repository the-shravan-6926/ssl_lab7_q2_mc25bt023 on github.com
+  https://github.com/the-shravan-6926/ssl_lab7_q2_mc25bt023
+✓ Added remote https://github.com/the-shravan-6926/ssl_lab7_q2_mc25bt023.git
+PS S:\ssl_lab7_q2_mc25bt023\calculator-library> git branch --show-current
+master
+PS S:\ssl_lab7_q2_mc25bt023\calculator-library> git push -u origin master
+>> git push origin v1.0
+Enumerating objects: 14, done.
+Counting objects: 100% (14/14), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (14/14), 1.92 KiB | 98.00 KiB/s, done.
+Total 14 (delta 5), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (5/5), done.
+To https://github.com/the-shravan-6926/ssl_lab7_q2_mc25bt023.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 180 bytes | 25.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/the-shravan-6926/ssl_lab7_q2_mc25bt023.git
+ * [new tag]         v1.0 -> v1.0
+PS S:\ssl_lab7_q2_mc25bt023\calculator-library> git remote -v
+>> git log --oneline --decorate
+>> git tag
+>> git status
+origin  https://github.com/the-shravan-6926/ssl_lab7_q2_mc25bt023.git (fetch)
+origin  https://github.com/the-shravan-6926/ssl_lab7_q2_mc25bt023.git (push)
+0d28b6a (HEAD -> master, tag: v1.0, origin/master) Fix square function
+c1a0f94 Introduce bug in square function
+9dcd59c Add input validation and error handling
+95e5036 Initial working calculator implementation
+v1.0
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+PS S:\ssl_lab7_q2_mc25bt023\calculator-library> python -m unittest -v
+>> python calculator.py
+>> git status
+>> git log --oneline --graph --decorate
+>> git tag
+test_add (test_calculator.TestCalculator.test_add) ... ok
+test_divide (test_calculator.TestCalculator.test_divide) ... ok
+test_divide_by_zero (test_calculator.TestCalculator.test_divide_by_zero) ... ok
+test_invalid_division_inputs (test_calculator.TestCalculator.test_invalid_division_inputs) ... ok
+test_invalid_inputs (test_calculator.TestCalculator.test_invalid_inputs) ... ok
+test_multiply (test_calculator.TestCalculator.test_multiply) ... ok
+test_square (test_calculator.TestCalculator.test_square) ... ok
+test_subtract (test_calculator.TestCalculator.test_subtract) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.002s
+
+OK
+8
+5.0
+16
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+* 0d28b6a (HEAD -> master, tag: v1.0, origin/master) Fix square function
+* c1a0f94 Introduce bug in square function
+* 9dcd59c Add input validation and error handling
+* 95e5036 Initial working calculator implementation
+v1.0
