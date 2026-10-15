@@ -29,7 +29,7 @@ def divide(a, b):
 
 def square(a):
     validate_numbers(a)
-    return a + a
+    return a * a
 
 
 if __name__ == "__main__":
